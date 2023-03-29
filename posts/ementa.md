@@ -8,7 +8,10 @@ category:
 star: true
 index: false
 ---
+
+
 # Plano de Curso de Disciplina do Ensino Superior
+
 
 **CURSO:** Tecnologia em Análise e Desenvolvimento de Sistemas
 
