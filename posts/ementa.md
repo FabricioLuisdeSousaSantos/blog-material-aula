@@ -18,7 +18,7 @@ index: false
 
 **PERÍODO LETIVO:** 2023.1
 
-**Código Disciplina:** PRG09 Programação Orientada a Objetos
+**Código Disciplina:** PRG09 Padrões de projetos 
 
 **Pré-requisitos da disciplina:** PRG04 - Programação Orientada a Objetos 
 
@@ -48,7 +48,7 @@ index: false
 - Padrões Criacionais
 - Padrões Estruturais
 - Padrões Comportamentais
-- Java EE
+- Jakarta EE
 
 ## Metodologia
 
