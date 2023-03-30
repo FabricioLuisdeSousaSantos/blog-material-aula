@@ -5,7 +5,7 @@ tag:
   - padroes
 category:
   - aula
-order: 1
+order: 2
 ---
 
 # Padrões de Projetos 🚧
