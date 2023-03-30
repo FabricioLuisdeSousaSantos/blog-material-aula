@@ -74,7 +74,7 @@ Objeto do tipo **Conta**
 - Homo Sapiens define um grupo de seres que possuem características em comum
   - Homo Sapiens é um ser humano?
   - Tudo está especificado na classe Homo Sapiens, mas se quisermos mandar alguém correr, comer, pular, precisaremos de uma instância de Homo Sapiens, ou então de um objeto do tipo Homo Sapiens.
-## Analogias
+### Analogias
 - Uma receita de bolo. 
   - Você come uma receita de bolo? 
     - Precisamos instaciá-la, criar um objeto bolo a partir dessa especificação (a classe) para utilizá-la. 
