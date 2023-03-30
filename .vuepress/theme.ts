@@ -18,7 +18,7 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "2023-ifba-saj-ads-ppr/blog-material-aula",
+  repo: "20231-ifba-saj-ads-ppr/blog-material-aula",
 
   docsBranch: 'main',
 
