@@ -1580,14 +1580,14 @@ interface Usuario
 Agora, conseguimos definir o que o método autentica() deve receber como parâmetro para trabalhar tanto com gerentes quanto com empresas. Ele deve receber um parâmetro do tipo Usuario.
 
 
-@[code](./code/Usuario.java)
-@[code](./code/Cliente.java)
-@[code](./code/PessoaFisica.java)
-@[code](./code/PessoaJuridica.java)
-@[code](./code/Funcionario.java)
-@[code](./code/Gerente.java)
-@[code](./code/Seguranca.java)
-@[code](./code/AutenticadorDeUsuario.java)
+@[code](./code/poo/Usuario.java)
+@[code](./code/poo/Cliente.java)
+@[code](./code/poo/PessoaFisica.java)
+@[code](./code/poo/PessoaJuridica.java)
+@[code](./code/poo/Funcionario.java)
+@[code](./code/poo/Gerente.java)
+@[code](./code/poo/Seguranca.java)
+@[code](./code/poo/AutenticadorDeUsuario.java)
 
 
 ###### Mais sobre herança e interface
@@ -1662,4 +1662,4 @@ A `interface` é um tipo específico de classe abstrata onde existe apenas as de
 
 
 
-@include(../bib/poo.md)
+@include(../bib/bib.md)
