@@ -370,6 +370,10 @@ Em resumo, agora sempre que um novo formato de arquivo surgir, é possível este
 
 O Princípio do Aberto/Fechado nos atenta para a aplicação de abstrações e polimorfismo, de forma consciente, garantindo que tenhamos um software mais flexível e, portanto, mais fácil de ser mantido.
 
+## Princípio da substituição de Liskov
+
+[^STACKIFY_LSP]
+
 ## Referências
 
 @include(../bib/bib.md)
