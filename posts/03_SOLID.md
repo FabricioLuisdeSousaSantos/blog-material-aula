@@ -196,12 +196,11 @@ public class Estagio{
 public class FolhaDePagamento{
     private double saldo;
     
-    public double calcular(Funcionario funcionario ){
-        if ( funcionario instanceof ContratoClt ) {
-            this.saldo = funcionario.salario();
-        } else if ( funcionario instanceof Estagio) {
-            this.saldo = funcionario.bolsaAuxilio();
-        }
+    public double calcular(ContratoClt contratoClt  ){
+        this.saldo = contratoClt.salario();
+    }
+    public double calcular(Estagio estagio ){
+        this.saldo = estagio.bolsaAuxilio();
     }
 }
 ```
@@ -211,7 +210,7 @@ A classe `FolhaDePagamento` precisa verificar o funcionário para aplicar a regr
 
 Qual o problema de se alterar a classe FolhaDePagamento?
 
-Não seria mais fácil apenas acrescentar mais um IF e verificar o novo tipo de funcionário PJ aplicando as respectivas regras? Sim, e provavelmente essa seria a solução que programadores menos experientes iriam fazer. Mas, esse é exatamente o problema! *Alterar uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.*
+Não seria mais fácil apenas acrescentar mais um IF (ou criar um novo método) e verificar o novo tipo de funcionário PJ aplicando as respectivas regras? Sim, e provavelmente essa seria a solução que programadores menos experientes iriam fazer. Mas, esse é exatamente o problema! *Alterar uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.*
 
 ::: tip Lembre-se
 OCP preza que uma classe deve estar fechada para alteração e aberta para extensão.
@@ -244,13 +243,13 @@ public interface Remuneravel{
 
 public class ContratoClt implements Remuneravel{
     public double remuneracao(){
-        //...
+        return salario();
     }
 }
 
 public class Estagio implements Remuneravel{
     public double remuneracao(){
-        //...
+        return bolsaAuxilio();
     }
 }
 
@@ -330,19 +329,22 @@ public abstract class Arquivo{
 }
  
 public class ArquivoWord extends Arquivo{
-    public override void gerar(){
+    @Override
+    public void gerar(){
         // codigo para geracao do arquivo
     }
 }
  
 public class ArquivoPdf extends Arquivo{
-    public override void gerar(){
+    @Override
+    public void gerar(){
         // codigo para geracao do arquivo
     }
 }
  
 public class ArquivoTxt extends Arquivo{
-    public override void gerar(){
+    @Override
+    public void gerar(){
         // codigo para geracao do arquivo
     }
 }
