@@ -376,7 +376,234 @@ O Princípio do Aberto/Fechado nos atenta para a aplicação de abstrações e p
 
 [^STACKIFY_LSP]
 
-## Referências
+O Princípio de Substituição de Liskov é uma ferramenta essencial para a identificação de conceitos semelhantes sendo representados por classes diferentes. Ele é baseado na ideia de que uma classe derivada deve ser capaz de substituir sua classe base sem afetar o comportamento do programa. Isso significa que, se um programa pode utilizar objetos de tipos diferentes de maneira intercambiável, então esses objetos deveriam ser de classes que possuem uma relação de herança.
+
+Ao aplicar o LSP, os desenvolvedores podem garantir que suas classes derivadas respeitem as mesmas regras e comportamentos que suas classes base. Isso ajuda a manter a coerência e consistência do código, bem como a facilitar a manutenção e a evolução do software.
+
+Por exemplo, imagine que um programa possui uma classe `Forma` que representa a forma geométrica básica e dela são derivadas duas outras classes `Retângulo` e `Triângulo`. Se o programa tem uma função que calcula a área de uma forma, é importante que essa função funcione de maneira consistente para todas as formas, independentemente de serem retângulos ou triângulos.
+
+Imagine agora que o sistema possui uma classe `Circulo` e essa classe não faça parte da família `Forma`. Durante a execução do programa o comportamento de `Circulo` é muito semelhante aos dos filhos de `Forma`. `Circulo` pode ser desenhado na tela, ter suas características de tamanho e cor alteradas e ter uma formula para o calculo de area. Assim como os objetos da família `Circulo`.
+
+### Definição
+
+O Princípio de Substituição de Liskov leva esse nome por ter sido criado por Barbara Liskov, em 1988. A definição formal de Liskov diz que:
+
+::: tip Definição
+Se para cada objeto `o1` do tipo `S` há um objeto `o2` do tipo `T` de forma que, para todos os programas `P` definidos em termos de `T`, o comportamento de `P` é inalterado quando `o1` é substituído por `o2` então `S` é um subtipo de `T`
+:::
+
+
+
+## Princípio da Segregação de Interface (ISP)
+
+[^JACKHISTON] [^MACORATTI_ISP]
+
+
+## O que é uma interface?
+
+Uma interface define um contrato que uma classe deve seguir, especificando quais métodos ela deve implementar. Quando `Cliente` deseja interagir com `ServicoA`, v se comunicará por meio da interface `Servico`, para a qual `ServicoA` e `Cliente` se entendem mutuamente.
+
+<figure>
+
+```plantuml
+class Cliente
+class ServicoA implements Servico 
+
+Cliente . Servico 
+```
+
+<figcaption>Uso de interface pela classe Cliente</figcaption>
+</figure>
+
+Interfaces são úteis para polimorfismo. o objeto `Cliente` apenas entende ou sabe sobre a interface `Servico`, o que significa que ele não sabe que o objeto `ServicoA` existe. Isso significa que pode ocorrer polimorfismo - ou seja, o objeto `Servico` pode ser substituído por muitas implementações diferentes, sem afetar o objeto `Cliente`
+
+## Definição
+
+O Princípio da Segregação de Interface trata da coesão de interfaces e diz que 
+
+::: tip Definição
+Clientes não devem ser forçados a depender de métodos que não usam.
+:::
+
+Este princípio afirma que os clientes não devem ser forçados a depender das interfaces que eles não usam. Quando temos interfaces não coesas, o ISP nos orienta a criar múltiplas interfaces menores e coesas.
+
+
+::: warning 
+Coesão é o nível de integralidade interna de uma classe e mede o grau em que uma classe ou seus métodos fazem sentido, ou seja, quão claro é o entendimento do que a classe ou método possui. Uma alta coesão indica responsabilidades bem definidas.
+::: 
+
+Quando você aplica o ISP, a classe e suas dependências se comunicam usando interfaces fortemente focadas, minimizando as dependências de membros não utilizados e reduzindo o acoplamento de acordo.
+
+Interfaces menores são mais fáceis de implementar, melhorando a flexibilidade e a possibilidade de reutilização. Como menos classes compartilham interfaces, o número de alterações necessárias em resposta a uma modificação da interface é reduzido, e, isso aumenta a robustez.
+
+```java
+   public interface Pedido{
+        void compra();
+        void processarCartaoCredito();
+    }
+
+    public class PedidoOnline implements Pedido{
+        public void compra(){
+            //código da compra
+        }
+        public void processarCartaoCredito(){
+            //processo do cartão
+        }
+    }
+
+    public class PedidoPresencial implements Pedido{
+        public void compra(){
+            //código da compra
+        }
+        public void processarCartaoCredito(){
+            //Não precisa para boleto
+            throw new UnsupportedOperationException();
+        }
+    }
+```
+
+Neste código temos a interface `Pedido` sendo implementada pelas classes PedidoOnline e `PedidoPresencial`.
+
+Aparentemente tudo esta correto e o código vai funcionar.
+
+Mas este código esta violando o princípio ISP pois a interface `Pedido` esta sendo implementada pela classe `PedidoPresencial` mas esta classe não esta implementando o método `ProcessarCartaoCredito`.
+
+Assim a classe esta sendo forçada a depender do método `ProcessarCartaoCredito` que ela não precisa usar.
+
+Para adequar o código ao princípio ISP podemos fazer assim:
+
+
+```java
+   public interface Pedido{ 
+        void compra();
+    }
+   public interface PagamentoCartao{
+        void processarCartaoCredito();
+    }
+
+    public class PedidoOnline implements Pedido, PagamentoCartao{
+        public void compra(){
+            //código da compra
+        }
+        public void processarCartaoCredito(){
+            //processo do cartão
+        }
+    }
+
+    public class PedidoPresencial implements Pedido{
+        public void compra(){
+            //código da compra
+        }        
+    }
+```
+
+Agora temos interfaces específicas `Pedido` e `PagamentoCartao`, e, nenhuma classe esta sendo obrigada a implementa um método que não utiliza.
+
+
+## Princípio da Inversão de Dependência (DIP)
+
+[^MACORATTI_DIP]
+
+::: tip Definição
+
+- Dependa de abstrações e não de implementações
+- Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações
+- Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações
+
+:::
+
+que, basicamente significam *Programe para uma interface/classe abstrata e não para uma classe concreta*.
+
+
+
+A dependência em tempo de compilação da maioria dos aplicativos flui na direção da execução do runtime, o que resulta em um gráfico de dependência direta. Por exemplo, se um módulo A chama uma função/método no módulo B, que por sua vez chama uma função/método no módulo C, então em tempo de compilação, A dependerá de B, que dependerá de C, criando uma cadeia de dependência como mostrado abaixo:
+
+<figure>
+
+```plantuml
+package "Tempo de compilação" {
+    class ClassA
+    class ClassB 
+    class ClassC 
+    ClassA ..>  ClassB :"  Referência"   
+    ClassB ..> ClassC :"  Referência"    
+    
+
+}
+
+package "Tempo de execução" {
+    class ClassA 
+    class ClassB 
+    class ClassC 
+    ClassA ..>  ClassB :"  Controle de Fluxo"   
+    ClassB ..> ClassC :"  Controle de Fluxo" 
+}
+
+```
+
+<figcaption>Dependência direta</figcaption>
+</figure>
+
+A aplicação do princípio de inversão de dependência permite que a `ClasseA` chame métodos em uma abstração implementada por `ClasseB`, possibilitando que `ClasseA` chame `ClasseB` em tempo de execução, mas que `ClasseB` dependa de uma interface controlada por `ClasseA` em tempo de compilação (invertendo assim a dependência em tempo de compilação).
+
+Em tempo de execução, o fluxo de execução do programa permanece inalterado, mas a introdução de interfaces significa que diferentes implementações dessas interfaces podem ser facilmente conectadas.
+
+<figure>
+
+```plantuml
+
+package "Tempo de compilação" {
+    class ClassA
+    class ClassB 
+    interface InterfaceB
+    class ClassC 
+    interface InterfaceC
+    ClassA ..  InterfaceB :"  Referência"   
+    InterfaceB <|. ClassB
+    InterfaceC <|. ClassC
+    InterfaceB -[hidden]- InterfaceC
+    ClassB ..  InterfaceC :"  Referência"   
+
+}
+
+package "Tempo de execução" {
+    class ClassA 
+    class ClassB 
+    class ClassC 
+    ClassA -->  ClassB :"  Controle de Fluxo"   
+    ClassB --> ClassC :"  Controle de Fluxo" 
+}
+```
+
+<figcaption>Inversão da Dependência</figcaption>
+</figure>
+
+
+Assim a inversão de dependência é uma parte essencial da construção de aplicativos fracamente acoplados, pois os detalhes da implementação podem ser escritos para depender e implementar abstrações de nível superior, e não o contrário.
+
+Os aplicativos resultantes são mais testáveis, modulares e sustentáveis como resultado.
+
+Os principais motivos para programar para uma interface/classe abstrata são:
+
+- *Facilidade de manter o código*  - As alterações ficam mais isoladas, não precisa mudar tudo que aceitava uma classe concreta para aceitar outra necessária. È possível mudar a implementação sem quebrar a aplicação.
+- *Fica fácil estender o código* - Permite que novas implementações sejam feitas sem alterar tudo que esperava determinado objeto; certos comportamentos se tornam mais genéricos podendo manipular objetos que ele desconhece desde que contenha o contrato esperado;
+- *Fica mais fácil realizar testes* - É fácil substituir um objeto real de produção por um falso que facilite o teste;
+
+Além disso interfaces facilitam a redução do acoplamento do código e ajudam a encapsular o código.
+
+### Como podemos obter a inversão da dependência?
+
+Uma das formas de obter a inversão da dependência e usar o padrão de projeto da injeção da dependência. Dessa forma injetamos a dependência para obter a inversão da dependência.
+
+Como exemplo temos Jakarta Contexts and Dependency Injection (CDI) que é um framework para injeção de dependência em Java. Ele fornece um conjunto de anotações e uma infraestrutura para criar e gerenciar objetos de maneira mais fácil e flexível. O CDI é parte da especificação Jakarta EE.
+
+Outras opções são de CDI em java são:
+
+- *Spring Framework*: é uma das alternativas mais populares ao CDI, oferecendo injeção de dependência, controle transacional, gerenciamento de segurança, entre outras funcionalidades. O Spring possui uma comunidade grande e ativa, além de uma ampla documentação.
+- *Google Guice*: é um framework de injeção de dependência leve e fácil de usar, que utiliza anotações para definir as dependências entre classes. O Guice foi criado pela Google e é usado em alguns projetos internos da empresa.
+- *PicoContainer*: é um framework de injeção de dependência que oferece uma solução simples e eficiente para gerenciamento de objetos. O PicoContainer é leve e fácil de usar, e permite a criação de aplicativos modulares e escaláveis.
+
+# Referências
 
 @include(../bib/bib.md)
 

@@ -105,3 +105,12 @@
 
 
 [^STACKIFY_LSP]: Princípios de design SOLID explicados: o princípio de substituição de Liskov com exemplos de código. [https://stackify.com/solid-design-liskov-substitution-principle/](https://stackify.com/solid-design-liskov-substitution-principle/)
+
+[^JACKHISTON]: The Interface Segregation Principle. [https://jackhiston.com/2017/8/3/the-interface-segregation-principle/](https://jackhiston.com/2017/8/3/the-interface-segregation-principle/)
+
+[^MACORATTI_ISP]: Princípio Da Segregação da Interface(ISP). [https://www.macoratti.net/20/05/c_isp1.htm](https://www.macoratti.net/20/05/c_isp1.htm)
+
+
+[^MACORATTI_DIP]: Princípio da Inversão da Dependência. [https://macoratti.net/20/05/c_invdep1.htm](https://macoratti.net/20/05/c_invdep1.htm)
+
+
