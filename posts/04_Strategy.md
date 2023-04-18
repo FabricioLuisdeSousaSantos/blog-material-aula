@@ -318,7 +318,7 @@ ObjectWindows da Borland [Bor94] utiliza estratégias em caixas de diálogo para
 ObjectWindows utiliza objetos Validator para encapsular estratégias de validação. Validators são exemplos de objetos Strategy. Campos de entrada de dados delegam a estratégia de validação para um objeto Validator opcional. O cliente associa um validator a um campo, se for necessária uma validação (isto é, um exemplo de uma estratégia opcional). Quando o diálogo é fechado, os campos de entrada solicitam aos seus validators para validarem os dados. A biblioteca de classes fornece validators para casos comuns, tal como um RangeValidator (um validator de intervalo) para números. Novas estratégias de validação, específicas do cliente, podem ser definidas facilmente, criando subclasses da classe Validator.
 
 ## Padrão relacionados
-[Flyweight](/XX_Flyweight.md): objetos Strategy geralmente são bons flyweights.
+[Flyweight]: objetos Strategy geralmente são bons flyweights.
 
 
 ## Referências

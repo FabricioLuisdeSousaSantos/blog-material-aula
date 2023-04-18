@@ -10,6 +10,6 @@ order: 0
 
 # Links Úteis
 
-- [Material Complementar](https://github.com/20231-ifba-saj-ads-lpr/material-complementar/blob/main/README.md)
+- [Material Complementar](https://github.com/20231-ifba-saj-ads-ppr/material-complementar/blob/main/README.md)
 - [Repl IT IDE Java Online](https://replit.com/languages/java10)
 
