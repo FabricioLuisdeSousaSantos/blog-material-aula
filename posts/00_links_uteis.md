@@ -12,4 +12,5 @@ order: 0
 
 - [Material Complementar](https://github.com/20231-ifba-saj-ads-ppr/material-complementar/blob/main/README.md)
 - [Repl IT IDE Java Online](https://replit.com/languages/java10)
+- [sourcemaking Design Patterns](https://sourcemaking.com/design_patterns)
 

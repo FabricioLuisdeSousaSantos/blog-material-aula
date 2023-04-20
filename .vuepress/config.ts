@@ -1,12 +1,13 @@
 import { defineUserConfig } from "vuepress";
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 import umlPlugin from 'markdown-it-plantuml';
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 import theme from "./theme.js";
 
 export default defineUserConfig({
 
-  base : "blog-material-aula",
+  base : "/blog-material-aula/",
     
   head: [
     ['link', { rel: 'manifest', href: '/blog-material-aula/manifest.webmanifest' }],
@@ -27,8 +28,13 @@ export default defineUserConfig({
     pwaPlugin({
       // your options
     }),
+    mdEnhancePlugin({
+      include: true,
+      footnote: true
+    }),
   ],
 
   shouldPrefetch: false,
+  
 
 });

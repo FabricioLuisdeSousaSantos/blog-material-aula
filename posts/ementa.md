@@ -77,5 +77,3 @@ O processo de avaliação dar-se-á ao longo do desenvolvimento da disciplina. C
 - SHALLOWAY, Alan; TROTT, James R. **Explicando padrões de projeto Uma nova perspectiva em Projeto orientado a objeto.** Bookman, 2004.
 - SHVETS, Alexander. **Dive Into Design Patterns.** (https://refactoring.guru/pt-br/design-patterns)
 
-
-[Material Estudo](https://github.com/20231-ifba-saj-ads-ppr/material-complementar/blob/main/README.md)

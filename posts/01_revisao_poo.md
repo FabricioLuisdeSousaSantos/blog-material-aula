@@ -121,7 +121,6 @@ conta --> conta3 : new
 <figcaption> Representação de vários objetos de uma mesma estrutura.</figcaption>
 </figure>
 
-
  - Estrutura (molde) que define os atributos e/ou estados de um conjunto de objetos com características similares.
  - Define o comportamento de seus objetos (ações que o objeto pode fazer) através de métodos. 
  - Descreve os serviços (ações) providos por seus objetos 
