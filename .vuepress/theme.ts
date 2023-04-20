@@ -50,6 +50,7 @@ export default hopeTheme({
   metaLocales: {
     toc: "Nesta Página",
   },
+  
 
   plugins: {
 
@@ -61,13 +62,23 @@ export default hopeTheme({
       excerptLength:0,
     },
 
+    pwa: true,
+
+
+    photoSwipe: {
+      scrollToClose:false,
+    },
+
 
     mdEnhance: {
-      enableAll: true,
+      footnote: true,
+      include: true,
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
     },
+    
   },
+  
   
 });

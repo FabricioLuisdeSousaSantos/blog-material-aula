@@ -1,7 +1,5 @@
 import { defineUserConfig } from "vuepress";
-import { pwaPlugin } from "vuepress-plugin-pwa2";
 import umlPlugin from 'markdown-it-plantuml';
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 import theme from "./theme.js";
 
@@ -22,17 +20,7 @@ export default defineUserConfig({
   },
 
 
-  theme,
-
-  plugins: [
-    pwaPlugin({
-      // your options
-    }),
-    mdEnhancePlugin({
-      include: true,
-      footnote: true
-    }),
-  ],
+  theme,  
 
   shouldPrefetch: false,
   
