@@ -114,15 +114,15 @@
 
 [^MACORATTI_DIP]: Princípio da Inversão da Dependência. [https://macoratti.net/20/05/c_invdep1.htm](https://macoratti.net/20/05/c_invdep1.htm)
 
-[^SourceMaking]: Object Pool Design Pattern. [https://sourcemaking.com/design_patterns/object_pool] 
+[^SourceMaking]: Object Pool Design Pattern. [https://sourcemaking.com/design_patterns/object_pool](https://sourcemaking.com/design_patterns/object_pool) 
 
-[^ODesign]: Object Pool Pattern. [https://www.oodesign.com/object-pool-pattern] 
+[^ODesign]: Object Pool Pattern. [https://www.oodesign.com/object-pool-pattern](https://www.oodesign.com/object-pool-pattern)
 
-[^BestPratice]: Best Practice Software Engineering - Object Pool. [http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/objectpool.html] 
+[^BestPratice]: Best Practice Software Engineering - Object Pool. [http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/objectpool.html](http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/objectpool.html) 
 
-[^CsiUneb]: Object Pool - Padrões de Projeto. [http://www.csi.uneb.br/padroes_de_projetos/object_pool.html] 
+[^CsiUneb]: Object Pool - Padrões de Projeto. [http://www.csi.uneb.br/padroes_de_projetos/object_pool.html](http://www.csi.uneb.br/padroes_de_projetos/object_pool.html)
 
-[^Microsoft]: Reutilização de objeto com Object Pool no ASP.NET Core. [https://learn.microsoft.com/pt-br/aspnet/core/performance/objectpool?view=aspnetcore-7.0] 
+[^Microsoft]: Reutilização de objeto com Object Pool no ASP.NET Core. [https://learn.microsoft.com/pt-br/aspnet/core/performance/objectpool?view=aspnetcore-7.0](https://learn.microsoft.com/pt-br/aspnet/core/performance/objectpool?view=aspnetcore-7.0) 
 
 [^MANZANO]: Manzano, J. and Oliveira, J., 2005. Algoritmos. 17th ed. São Paulo (SP): Érica.
 
@@ -161,9 +161,9 @@
 [^JoaoRobertoSOLID]:João Roberto da Paixão.O que é SOLID: O guia completo para você entender os 5 princípios da POO.[https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530](https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530) (Acessado em 18/03/2022) 
 
 
-[^guru]:Prototype. Refactoring Guru. Disponível em: [https://refactoring.guru/pt-br/design-patterns/prototype](https://refactoring.guru/pt-br/design-patterns/prototype). Acesso em: 07 de abril de 2022.
-
 [^K19]: K19. Design Patterns em Java. 2012
+
+[^REFACTORING_GURU]: Mergulho nos Padrões de Projeto, [https://refactoring.guru/pt-br/design-patterns](https://refactoring.guru/pt-br/design-patterns)
 
 
 [^Ascencio]: Ascencio, A. and Campos, E., 2008. Fundamentos Da Programação De Computadores. São Paulo: Pearson Prentice Hall.
@@ -241,11 +241,22 @@
 [^MACORATTI_DIP]: Princípio da Inversão da Dependência. [https://macoratti.net/20/05/c_invdep1.htm](https://macoratti.net/20/05/c_invdep1.htm)
 
 
-
-
 [^GAMMA]: GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman editora, 2009.
 
 [^Shvets]: Shvets, Alexander. EBOOK Mergulho Nos Padrões de Projeto.
 
-[^ProjectLombok]: Project Lombok [https://projectlombok.org/features/Builder](https://projectlombok.org/features/Builder) (Acessado em 24/04/2023)
+[^ProjectLombok]: Project Lombok [projectlombok.org](https://projectlombok.org/features/Builder) (Acessado em 24/04/2023).
+
+[^DoctrineQueryBuilder]: Doctrine - Query Builder ORM [doctrine-project.org/projects/doctrine-orm](https://www.doctrine-project.org/projects/doctrine-orm/en/2.14/reference/query-builder.html) (Acessado em 01/05/2023).
+
+[^Unity]: Unity - Introduction to Object Pooling [https://learn.unity.com/tutorial/introduction-to-object-pooling#](https://learn.unity.com/tutorial/introduction-to-object-pooling#)
+
+[^Unity3D]: Unity 3D - Desenvolvimento de Games [https://www.devmedia.com.br/unity-3d-introducao-ao-desenvolvimento-de-games/30653](https://www.devmedia.com.br/unity-3d-introducao-ao-desenvolvimento-de-games/30653)
+
+[^ASPNET]: ASP.NET CORE [https://dotnet.microsoft.com/pt-br/learn/aspnet/what-is-aspnet-core](https://dotnet.microsoft.com/pt-br/learn/aspnet/what-is-aspnet-core)
+
+[^JavaList]: List - Java Docs: [docs.oracle.com/javase/8/docs/api/java/util/List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
+
+[^JogoSelva]: Jogo Selva [https://brainking.com/pt/GameRules?tp=56](https://brainking.com/pt/GameRules?tp=56)
+
 
